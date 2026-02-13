@@ -1,0 +1,108 @@
+[ bondedtypes ]
+; Column 1 : default bondtype
+; Column 2 : default angletype
+; Column 3 : default proper dihedraltype
+; Column 4 : default improper dihedraltype
+; Column 5 : This controls the generation of dihedrals from the bonding.
+;            All possible dihedrals are generated automatically. A value of
+;            1 here means that all these are retained. A value of
+;            0 here requires generated dihedrals be removed if
+;              * there are any dihedrals on the same central atoms
+;                specified in the residue topology, or
+;              * there are other identical generated dihedrals
+;                sharing the same central atoms, or
+;              * there are other generated dihedrals sharing the
+;                same central bond that have fewer hydrogen atoms
+; Column 6 : number of neighbors to exclude from non-bonded interactions
+; Column 7 : 1 = generate 1,4 interactions between pairs of hydrogen atoms
+;            0 = do not generate such
+; Column 8 : 1 = remove proper dihedrals if found centered on the same
+;                bond as an improper dihedral
+;            0 = do not generate such
+; bonds  angles  dihedrals  impropers all_dihedrals nrexcl HH14 RemoveDih
+     1       1          3          1        1         3      1     0
+
+[ 1R ]
+
+ [ atoms ]
+    C1   1R_000      -0.023     1
+    H0J  1R_001       0.095     1
+    C2   1R_002      -0.130     1
+    H0K  1R_003       0.071     1
+    H0M  1R_004       0.071     1
+    C0E  1R_005       0.260     1
+    C0C  1R_006      -0.256     1
+    C0D  1R_007      -0.256     1
+    C0A  1R_008       0.001     1
+    H0N  1R_009       0.201     1
+    C0B  1R_010       0.001     1
+    H0O  1R_011       0.201     1
+    H0P  1R_012       0.173     1
+    H0Q  1R_013       0.173     1
+    C01  1R_014      -0.209     1
+    H0R  1R_015       0.131     1
+    H0S  1R_016       0.131     1
+    C00  1R_017       0.066     1
+    H0T  1R_018       0.031     1
+    H0U  1R_019       0.031     1
+    C02  1R_020      -0.062     1
+    H0V  1R_021       0.040     1
+    H0W  1R_022       0.040     1
+    C03  1R_023       0.135     1
+    H0X  1R_024      -0.010     1
+    H0Y  1R_025      -0.010     1
+    C04  1R_026      -0.238     1
+    H0Z  1R_027       0.099     1
+    H10  1R_028       0.099     1
+    S05  1R_029       1.188     1
+    O06  1R_030      -0.753     1
+    O07  1R_031      -0.753     1
+    O08  1R_032      -0.753     1
+    N09  1R_033       0.215     1
+
+ [ bonds ]
+   -C2   C1 
+    C1   H0J 
+    C1   C0E 
+    C1   C2  
+    C2  +C1 
+    C2   H0K 
+    C2   H0M 
+    C0E  C0C 
+    C0E  C0D 
+    C0C  H0N 
+    C0C  C0A 
+    C0D  H0O 
+    C0D  C0B 
+    C0A  H0P 
+    C0A  N09 
+    C0B  H0Q 
+    C0B  N09 
+    C01  H0R 
+    C01  H0S 
+    C01  N09 
+    C01  C00 
+    C00  H0T 
+    C00  H0U 
+    C00  C02 
+    C02  H0V 
+    C02  H0W 
+    C02  C03 
+    C03  H0Y 
+    C03  H0X 
+    C03  C04 
+    C04  H10 
+    C04  H0Z 
+    C04  S05 
+    S05  O07 
+    S05  O06 
+    S05  O08 
+
+ [ impropers ]
+;  ai    aj   ak   al funct      c0       c1      c2      c3       c4     c5
+    C01   N09    C0A   C0B          180.000   10.460       2  
+    N09   C0A    C0C   H0P          180.000   10.460       2  
+    N09   C0B    C0D   H0Q          180.000   10.460       2  
+    C0A   C0C    C0E   H0N          180.000   10.460       2  
+    C0B   C0D    C0E   H0O          180.000   10.460       2  
+    C0D   C0E    C0C   C1           180.000   10.460       2 
